@@ -6,4 +6,4 @@ select
 from 
 	"Production"."Product" p 
 	left outer join "Production"."ProductModel" pm 
-	on p."ProductID" = pm."ProductModelID" 
+	on p."ProductModelID" = pm."ProductModelID" 
