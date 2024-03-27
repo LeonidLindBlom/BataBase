@@ -4,7 +4,8 @@ select
 	"BusinessEntityID" 
    , "LastReceiptDate" 
    , max("LastReceiptCost") as "MaxLastReceiptCost"
-   , sum("LastReceiptCost") as "TotalCost" 
+   , sum("LastReceiptCost") as "TotalCost"
+   , grouping("BusinessEntityID", "LastReceiptDate") 
 from
 	"Purchasing"."ProductVendor" pv 
 group by cube("LastReceiptDate", "BusinessEntityID")
