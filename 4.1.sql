@@ -5,4 +5,3 @@ where ("SellEndDate" - "SellStartDate") = (
     select min("SellEndDate" - "SellStartDate")
     from "Production"."Product"
 )
-
