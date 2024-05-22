@@ -1,13 +1,13 @@
 --Ранжирование товаров по цене списка в порядке убывания цены
-SELECT
+select
   p."ProductID",
   p."Name",
   p."ListPrice",
   (
-    SELECT COUNT(*)
-    FROM "Production"."Product" p2
-    WHERE p2."ListPrice" > p."ListPrice"
-  ) AS ProductRank
-FROM
+    select count(*)
+    from "Production"."Product" p2
+    where p2."ListPrice" > p."ListPrice"
+  ) as ProductRank
+from
   "Production"."Product" p
-ORDER BY p."ListPrice" DESC
+order by p."ListPrice" desc
